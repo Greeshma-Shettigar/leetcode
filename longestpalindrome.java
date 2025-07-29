@@ -1,7 +1,4 @@
 /*Given a string s, return the longest palindromic substring in s.
-
- 
-
 Example 1:
 
 Input: s = "babad"
@@ -22,7 +19,7 @@ public class longestpalindrome {
             int len1 = expandAroundCenter(s, i, i);       // Odd-length palindrome
             int len2 = expandAroundCenter(s, i, i + 1);   // Even-length palindrome
             int len = Math.max(len1, len2);               // Longer of the two
-            if (len > end - start) {
+            if (len > end - start) {         // If this  current palindrome length(len) is longer than the previous longest palindrome (end - start)
                 start = i - ((len - 1) / 2);              // Update start
                 end = i + (len / 2);                      // Update end
             }
